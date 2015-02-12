@@ -1,0 +1,213 @@
+﻿@model List<TP2.Models.Product>
+
+@{
+    
+ }
+
+
+
+<div id="sidebar" class="span3">
+
+</div>
+		@using (Html.BeginForm("Index1", "Catagery", FormMethod.Get)) { 
+                <b>Search By:</b>
+               <!--   @Html.RadioButton("searchBy","Name")<text>Name</text>
+              @Html.RadioButton("searchBy","Brand")<text>Brand</text> -->
+                @Html.TextBox("searchBy")
+                <input type="text" name="search" />
+      <input type="submit" value="search" />
+                    
+            }
+
+
+
+	<div class="tab-pane  active" id="blockView">
+
+
+		<ul class="thumbnails">
+		
+            @foreach(var prod in Model){
+            	
+			    <li class="span3">
+			      <div class="thumbnail">
+				    <a href="#"><img src="/Content/assets/products/3.jpg" alt=""/></a>
+				    <div class="caption">
+				      <h5>@prod.Name &amp; @prod.Brand</h5>
+                        
+				      <p> 
+					    @prod.Description 
+				      </p>
+				               <h4><a class="btn btn-large" href="/Catagery/addToCart/@prod.Id")">Add To Cart</a> <span class="pull-right">$@prod.Price</span></h4>
+				    </div>
+			      </div>
+			    </li>
+
+            }
+
+
+		  </ul>
+       
+	<hr class="soft"/>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    
+    <li class="span3">
+			  <div class="thumbnail">
+				<a href="@Url.Content("/Catagery/product_details")"><img src="/Content/assets/products/3.jpg" alt=""/></a>
+				<div class="caption">
+				  <h5>Manicure &amp; Pedicure</h5>
+				  <p> 
+					I'm a paragraph. Click here 
+				  </p>
+				  <h4><a class="btn btn-large" href="@Url.Content("/Catagery/product_details")">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				</div>
+			  </div>
+			</li>
+			<li class="span3">
+			  <div class="thumbnail">
+				<a href="@Url.Content("/Catagery/product_details")"><img src="/Content/assets/products/3.jpg" alt=""/></a>
+				<div class="caption">
+				  <h5>Manicure &amp; Pedicure</h5>
+				  <p> 
+					I'm a paragraph. Click here 
+				  </p>
+				  <h4><a class="btn btn-large" href="@Url.Content("/Catagery/product_details")">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				</div>
+			  </div>
+			</li>
+			<li class="span3">
+			  <div class="thumbnail">
+				<a href="@Url.Content("/Catagery/product_details")"><img src="/Content/assets/products/3.jpg" alt=""/></a>
+				<div class="caption">
+				  <h5>Manicure &amp; Pedicure</h5>
+				  <p> 
+					I'm a paragraph. Click here 
+				  </p>
+				   <h4><a class="btn btn-large" href="@Url.Content("/Catagery/product_details")">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				</div>
+			  </div>
+			</li>
+			<li class="span3">
+			  <div class="thumbnail">
+				<a href="@Url.Content("/Catagery/product_details")"><img src="/Content/assets/products/3.jpg" alt=""/></a>
+				<div class="caption">
+				  <h5>Manicure &amp; Pedicure</h5>
+				  <p> 
+					I'm a paragraph. Click here 
+				  </p>
+				   <h4><a class="btn btn-large" href="@Url.Content("/Catagery/product_details")">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				</div>
+			  </div>
+			</li>
+			<li class="span3">
+			  <div class="thumbnail">
+				<a href="@Url.Content("/Catagery/product_details")"><img src="/Content/assets/products/3.jpg" alt=""/></a>
+				<div class="caption">
+				  <h5>Manicure &amp; Pedicure</h5>
+				  <p> 
+					I'm a paragraph. Click here 
+				  </p>
+				   <h4><a class="btn btn-large" href="@Url.Content("/Catagery/product_details")">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				</div>
+			  </div>
+			</li>
+
+
+
+
+    /////
+    
+    	<ul class="nav nav-list-group" style="display: block;">											
+		<li><a> CLOTHES [845] </a></li>
+		
+			<li><a class="navbar-item"href="#")"">Women's Clothing (45)</a></li>
+			<li><a href=""#">Women's Shoes (8)</a></li>												
+			<li><a href="@Url.Content("/Catagery/Product_details")"">Women's Hand Bags (5)</a></li>	
+			<li><a href="@Url.Content("/Catagery/Product_details")">Men's Clothings  (45)</a></li>
+			<li><a href="@Url.Content("/Catagery/Product_details")">Men's Shoes (6)</a></li>		<a href="~/Views/Catagery/Products.cshtml">~/Views/Catagery/Products.cshtml</a>										
+			<li><a href="@Url.Content("/Catagery/Product_details")">Kids Clothing (5)</a></li>												
+			<li><a href="@Url.Content("/Catagery/Product_details")">Kids Shoes (3)</a></li>											
+		
+		
+		<li style="border:0"> &nbsp;</li>						
+		<li> <a href="@Url.Content("/Catagery/Product_summary")"><strong>3 Items in your cart  <span class="badge badge-warning pull-right" style="line-height:18px;">$155.00</span></strong></a></li>
+		<li style="border:0"> &nbsp;</li>	
+		<li>
+		  <div class="thumbnail">
+			<img src="/Content/assets/products/1.jpg" alt="">
+			<div class="caption">
+			  <h5>Product name</h5>
+			  <p> 
+				Lorem Ipsum is simply dummy text. 
+			  </p>
+			  <h4><a class="btn" href="@Url.Content("/Catagery/Product_details")">VIEW</a> <span class="pull-right">$222.00</span></h4>
+			</div>
+		  </div>
+		</li>
+		<li style="border:0"> &nbsp;</li>		
+		<li class="last">
+		  <div class="thumbnail">
+			<img src="/Content/assets/products/2.jpg" alt="">
+			<div class="caption">
+			  <h5>Product name</h5>
+			  <p> 
+				Lorem Ipsum is simply dummy text. 
+			  </p>
+			  <h4><a class="btn" href="@Url.Content("/Catagery/Product_details")">VIEW</a> <span class="pull-right">$222.00</span></h4>
+			</div>
+		  </div>
+		</li> 
+	  </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    -->
+	
+
